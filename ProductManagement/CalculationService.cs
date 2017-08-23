@@ -21,7 +21,21 @@ namespace ProductManagement
         /// <returns></returns>
         public List<int> GetGroupTotal(int pen, string fieldName)
         {
+            if (pen < 0)
+            {
+                throw new ArgumentException();
+            }
             return new List<int>();
+        }
+
+        public int GetGroupTotal(int pen)
+        {
+            int result = 1;
+            if (pen == 0)
+            {
+                result = 0;
+            }
+            return result;
         }
     }
 

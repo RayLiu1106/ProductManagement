@@ -80,12 +80,12 @@ namespace ProductManagement.Tests
         /// 筆數若輸入為0, 則傳回0
         /// </summary>
         [TestMethod()]
-        public void PenIsZeroReturnTrue()
+        public void PenIsZeroReturnZero()
         {
             Order order = new Order();
             CalculationService<Model> service = new CalculationService<Model>(order);
-            var result = service.GetGroupTotal(0, "Revenue");
-            Assert.AreEqual(result, new List<int>());
+            var result = service.GetGroupTotal(0);
+            Assert.AreEqual(result, 0);
         }
 
 
